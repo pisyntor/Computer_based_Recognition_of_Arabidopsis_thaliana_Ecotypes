@@ -1,0 +1,11 @@
+D:\Projects\Plants_AU\Proj2\D2c\shared_files\PlantEnhancer_source_V1004\PlantEnhancer_source_V1004\PlantEnhancer\bin\Release\PlantEnhancer.exe.config
+D:\Projects\Plants_AU\Proj2\D2c\shared_files\PlantEnhancer_source_V1004\PlantEnhancer_source_V1004\PlantEnhancer\bin\Release\PlantEnhancer.exe
+D:\Projects\Plants_AU\Proj2\D2c\shared_files\PlantEnhancer_source_V1004\PlantEnhancer_source_V1004\PlantEnhancer\bin\Release\PlantEnhancer.pdb
+D:\Projects\Plants_AU\Proj2\D2c\shared_files\PlantEnhancer_source_V1004\PlantEnhancer_source_V1004\PlantEnhancer\obj\Release\PlantEnhancer.csproj.AssemblyReference.cache
+D:\Projects\Plants_AU\Proj2\D2c\shared_files\PlantEnhancer_source_V1004\PlantEnhancer_source_V1004\PlantEnhancer\obj\Release\PlantEnhancer.csproj.SuggestedBindingRedirects.cache
+D:\Projects\Plants_AU\Proj2\D2c\shared_files\PlantEnhancer_source_V1004\PlantEnhancer_source_V1004\PlantEnhancer\obj\Release\PlantEnhancer.Form1.resources
+D:\Projects\Plants_AU\Proj2\D2c\shared_files\PlantEnhancer_source_V1004\PlantEnhancer_source_V1004\PlantEnhancer\obj\Release\PlantEnhancer.Properties.Resources.resources
+D:\Projects\Plants_AU\Proj2\D2c\shared_files\PlantEnhancer_source_V1004\PlantEnhancer_source_V1004\PlantEnhancer\obj\Release\PlantEnhancer.csproj.GenerateResource.cache
+D:\Projects\Plants_AU\Proj2\D2c\shared_files\PlantEnhancer_source_V1004\PlantEnhancer_source_V1004\PlantEnhancer\obj\Release\PlantEnhancer.csproj.CoreCompileInputs.cache
+D:\Projects\Plants_AU\Proj2\D2c\shared_files\PlantEnhancer_source_V1004\PlantEnhancer_source_V1004\PlantEnhancer\obj\Release\PlantEnhancer.exe
+D:\Projects\Plants_AU\Proj2\D2c\shared_files\PlantEnhancer_source_V1004\PlantEnhancer_source_V1004\PlantEnhancer\obj\Release\PlantEnhancer.pdb
