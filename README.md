@@ -83,7 +83,7 @@ The fundamental filesystem structure resembles the tree shown below. Essentially
 
 ## How to use
 ### Prerequisites
-Each folder contains code for each task. Please go into each folder to find the required packages and install them before running the code. We recommend using [Conda](https://conda.io/projects/conda/en/latest/user-guide/install/index.html) to manage the environments better.
+Each folder contains the code for each task. Please go into each folder to find the required packages and install them before running the code. We recommend using [Conda](https://conda.io/projects/conda/en/latest/user-guide/install/index.html) to manage the environments better.
 ```
 conda create -n env_name 
 conda activate env_name
@@ -94,7 +94,7 @@ pip install -f requirements.txt
 Some raw collected data samples together with canopy-focused images as well as GUI outputs can be accessed [here](data).
 
 ### Models
-The models trained from scratch during the auto-optimization process for classifying ecotypes in both single-image and sequence-of-images settings can be found [here](scratch_trained_models).
+The models trained from scratch during the auto-optimization process for classifying ecotypes in both single-image and sequence-of-images settings can be found [here](trained_models).
 
 ## LICENSE
 This repo is distributed under [LICENSE](LICENSE).
