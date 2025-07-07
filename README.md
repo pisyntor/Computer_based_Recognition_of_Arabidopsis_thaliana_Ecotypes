@@ -51,10 +51,11 @@ The fundamental filesystem structure resembles the tree shown below. Essentially
 │   │       └── LTU-2_dataset
 │   └── 05_modelling
 │       ├── data_split_configs
-│       ├── inferencing
-│       ├── pytorch_utils
+│       ├── single_image_classification
 │       ├── sequence_of_images_classification
-│       └── single_image_classification
+│       ├── inference
+│       ├── pytorch_utils 
+│       └── heat_maps
 ├── data
 │   ├── LTU-1_dataset
 │   │   ├── 01_pot_img_samples
