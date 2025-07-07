@@ -19,9 +19,6 @@ using System.Threading;
 using System.Runtime.InteropServices;
 using System.Reflection;
 
-using System.Text.Json;
-using System.Text.Json.Nodes;
-
 
 namespace PlantEnhancer
 {
@@ -46,16 +43,15 @@ namespace PlantEnhancer
         public Form1()
         {
             InitializeComponent();
-            this.Icon = Icon.ExtractAssociatedIcon(System.Reflection.Assembly.GetExecutingAssembly().Location);
 
             // initialize params. of color deconvolution
-            numericUpDown_Desired_R.Value = 120;  // 48;
-            numericUpDown_Desired_G.Value = 100;  // 37;
-            numericUpDown_Desired_B.Value = 90;  // 56;
-            numericUpDown_Undesired_R.Value = 55;  // 17;
-            numericUpDown_Undesired_G.Value = 60;  // 68;
-            numericUpDown_Undesired_B.Value = 130;  // 88;
-            numericUpDown_Multiply.Value = Convert.ToDecimal(3.0);  // (1.5);
+            numericUpDown_Desired_R.Value = 48;
+            numericUpDown_Desired_G.Value = 37;
+            numericUpDown_Desired_B.Value = 56;
+            numericUpDown_Undesired_R.Value = 17;
+            numericUpDown_Undesired_G.Value = 68;
+            numericUpDown_Undesired_B.Value = 88;
+            numericUpDown_Multiply.Value = Convert.ToDecimal(1.5);
 
             // initialize the constraint, variables and controls
             ClearBitmaps(false);
@@ -467,10 +463,10 @@ namespace PlantEnhancer
             Processing_Activated = false;
         }
 
-        private void Process_Selected_Image(Bitmap bitmap, Boolean bShowOutputBitmap)
+        private (Bitmap EnhancedImg, Bitmap Mask) Process_Selected_Image(Bitmap bitmap, Boolean bShowOutputBitmap)
         {
             if (bitmap == null)
-                return;
+                return (null, null);
 
             //ClearBitmaps(true);
 
@@ -515,6 +511,7 @@ namespace PlantEnhancer
                 });
             }
 
+            return (new Bitmap(Output_Bitmap), new Bitmap(Output_Mask));
         }
 
         // Multiple class processing worker thread
@@ -608,33 +605,6 @@ namespace PlantEnhancer
                         fm1.listBox_Reps.Refresh();
                     });
 
-                    // Save JSON parameters for current ecotype
-                    // Prepare data
-                    var coder = new JsonObject()
-                    {
-                        ["Root Input Folder"] = fm1.textBox_Root_Input_FolderName.Text,
-                        ["Root Output Folder"] = fm1.textBox_Root_Output_FolderName.Text,
-                        ["Desired R"] = fm1.numericUpDown_Desired_R.Value,
-                        ["Desired G"] = fm1.numericUpDown_Desired_G.Value,
-                        ["Desired B"] = fm1.numericUpDown_Desired_B.Value,
-                        ["Undesired R"] = fm1.numericUpDown_Undesired_R.Value,
-                        ["Undesired G"] = fm1.numericUpDown_Undesired_G.Value,
-                        ["Undesired B"] = fm1.numericUpDown_Undesired_B.Value,
-                        ["CheckBox Smooth"] = fm1.checkBox_Smooth.Checked,
-                        ["Smoothing Gaussian Sigma"] = fm1.numericUpDown_Gaussian_sigma.Value,
-                        ["CheckBox Suppress Background"] = fm1.checkBox_Suppress_Background.Checked,
-                        ["Suppress Background Level"] = fm1.numericUpDown_Suppress_Background.Value,
-                        ["Multiplication Factor"] = fm1.numericUpDown_Multiply.Value,
-                        ["Shift Factor"] = fm1.numericUpDown_Otsu_Shift.Value,
-                        ["CheckBox Show Mask"] = fm1.checkBox_Show_Mask.Checked,
-                    };
-
-                    //convert to JSON string
-                    var jsonOptions = new JsonSerializerOptions() { WriteIndented = true };
-                    var coderJson = coder.ToJsonString(jsonOptions);
-                    // Write to file
-                    System.IO.File.WriteAllText(output_class_folder_name + "\\GUI_params.json", coderJson);
-
                     // process all reps
                     int nbofreps = fm1.listBox_Reps.Items.Count;
                     if (nbofreps == 0)
@@ -671,10 +641,6 @@ namespace PlantEnhancer
                         string output_rep_folder_name = output_class_folder_name + "\\" + rep_item;
                         if (!Directory.Exists(output_rep_folder_name))
                             Directory.CreateDirectory(output_rep_folder_name);
-                        if (!Directory.Exists(output_rep_folder_name + "\\enhanced"))
-                            Directory.CreateDirectory(output_rep_folder_name + "\\enhanced");
-                        if (!Directory.Exists(output_rep_folder_name + "\\masks"))
-                            Directory.CreateDirectory(output_rep_folder_name + "\\masks");
 
                         string imagesfoldername = fm1.textBox_Root_Input_FolderName.Text + "\\" + classname + "\\" + rep_item + "\\";
                         DirectoryInfo d2info = new DirectoryInfo(imagesfoldername);
@@ -732,13 +698,24 @@ namespace PlantEnhancer
                             fm1.LoadandShowCurrentImage();
 
                             //fm1.Process_Selected_Image(Input_Bitmap, false);
-                            fm1.Process_Selected_Image(Input_Bitmap, true);
+                            Bitmap Current_Enhanced_Img = null;
+                            Bitmap Current_Mask = null;
+                            (Current_Enhanced_Img, Current_Mask) = fm1.Process_Selected_Image(Input_Bitmap, true);
+
+                            int sum = 0;
+                            for (int x = 0; x < Current_Mask.Width; x++)
+                                for (int y = 0; y < Current_Mask.Height; y++)
+                                    if (Current_Mask.GetPixel(x, y).ToArgb() > 0)
+                                    {
+                                        sum += 1;
+                                        Console.WriteLine($"Current pixel: {Current_Mask.GetPixel(x, y)}");
+                                    }
+                            Console.WriteLine($"Sum(Mask[{Current_Mask.Width}, {Current_Mask.Height}]) = {sum}");
 
                             // save the output bitmap
-                            //string output_file_name = output_rep_folder_name + "\\" + filename;
-                            fm1.Output_Bitmap.Save(output_rep_folder_name + "\\enhanced\\" + filename);
-                            fm1.Output_Mask.Save(output_rep_folder_name + "\\masks\\" + filename);
-                            ;
+                            string output_file_name = output_rep_folder_name + "\\" + filename;
+                            fm1.Output_Bitmap.Save(output_file_name);
+;
                         }
 
                     }

@@ -82,7 +82,7 @@ namespace PlantEnhancer
             n2 = d1 * p3 - d3 * p1 + d3 * u1 - p3 * u1 - d1 * u3 + p1 * u3;
             n3 = d2 * p1 - d1 * p2 - d2 * u1 + p2 * u1 + d1 * u2 - p1 * u2;
 
-            //	d,u,n define basis
+            //	d,u,n define basis? 
             denom = d3 * n2 * u1 - d2 * n3 * u1 - d3 * n1 * u2 + d1 * n3 * u2 + d2 * n1 * u3 - d1 * n2 * u3;
             if (denom == 0.0)
             {

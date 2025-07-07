@@ -889,7 +889,7 @@ namespace PlantEnhancer
             this.numericUpDown_Gaussian_sigma.TabIndex = 176;
             this.numericUpDown_Gaussian_sigma.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numericUpDown_Gaussian_sigma.Value = new decimal(new int[] {
-            1,
+            3,
             0,
             0,
             0});
@@ -923,7 +923,8 @@ namespace PlantEnhancer
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MinimumSize = new System.Drawing.Size(1465, 700);
             this.Name = "Form1";
-            this.Text = "PlantEnhancer - Development Environment";
+            //this.Text = "PlantEnhancer - Development Environment";
+            this.Text = "Plant Enhancer";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResizeBegin += new System.EventHandler(this.Form1_ResizeBegin);
             this.ResizeEnd += new System.EventHandler(this.Form1_ResizeEnd);
