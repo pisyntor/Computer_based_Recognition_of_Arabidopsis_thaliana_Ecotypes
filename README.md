@@ -27,13 +27,13 @@ A – Collection of RGB image data in an indoor HTPP environment, B – Preparat
 The fundamental filesystem structure resembles the tree shown below. Essentially, we have two main folders: ```code``` for storing scripts and ```data``` for storing the dataset.
 ```console
 ├── code
-│   ├── 02_auto-cropping
-│   ├── 03_data_complexity
+│   ├── 01_auto-cropping
+│   ├── 02_data_complexity
 │   │   ├── 01_extracted_features
 │   │   │   └── internal_datasets
 │   │   ├── 02_feature_evolution
 │   │   └── 03_feature_extraction
-│   ├── 04_data_re_definition
+│   ├── 03_data_re_definition
 │   │   ├── 01_GUI
 │   │   │   └── PlantEnhancer
 │   │   │       ├── Properties
@@ -49,13 +49,13 @@ The fundamental filesystem structure resembles the tree shown below. Essentially
 │   │   └── 05_clustering
 │   │       ├── LTU-1_dataset
 │   │       └── LTU-2_dataset
-│   └── 05_modelling
-│       ├── data_split_configs
-│       ├── single_image_classification
-│       ├── sequence_of_images_classification
-│       ├── inference
-│       ├── pytorch_utils 
-│       └── heat_maps
+│   └── 04_modelling
+│       ├── 01_data_split_configs
+│       ├── 02_single_image_classification
+│       ├── 03_sequence_of_images_classification
+│       ├── 04_inference
+│       ├── 05_heat_maps
+│       └── 06_pytorch_utils
 ├── data
 │   ├── LTU-1_dataset
 │   │   ├── 01_pot_img_samples
@@ -77,7 +77,7 @@ The fundamental filesystem structure resembles the tree shown below. Essentially
 │       │       └── segmented_imgs
 │       └── 03_canopy_focused
 │           └── Is-1_rep_38_focused
-└── scratch_trained_models
+└── trained_models
     ├── LTU-1_models
     └── LTU-2_models
 ```
@@ -95,7 +95,7 @@ pip install -f requirements.txt
 Some raw collected data samples together with canopy-focused images as well as GUI outputs can be accessed [here](data).
 
 ### Models
-The models trained from scratch during the auto-optimization process for classifying ecotypes in both single-image and sequence-of-images settings can be found [here](trained_models).
+The models trained from scratch during the auto-optimisation process for classifying ecotypes in both single-image and sequence-of-images settings can be found [here](trained_models).
 
 ## LICENSE
 This repo is distributed under [LICENSE](LICENSE).
