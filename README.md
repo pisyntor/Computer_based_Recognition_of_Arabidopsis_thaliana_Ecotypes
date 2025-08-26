@@ -92,7 +92,7 @@ pip install -f requirements.txt
 ```
 
 ### Data
-Some raw collected data samples together with tighter cropped canopy images as well as GUI outputs, can be accessed [here](data).
+Some raw collected data samples, together with tighter cropped canopy images and GUI outputs, can be accessed [here](data).
 
 ### Models
 The models trained from scratch during the auto-optimisation process for classifying ecotypes in both single-image and sequence-of-images settings can be found [here](trained_models).
