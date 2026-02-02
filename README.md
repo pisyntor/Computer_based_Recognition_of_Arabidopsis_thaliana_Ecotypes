@@ -98,7 +98,7 @@ Some raw collected data samples, together with tighter cropped canopy images and
 The models trained from scratch during the auto-optimisation process for classifying ecotypes in both single-image and sequence-of-images settings can be found [here](trained_models).
 
 ### Publication
-This work has been publish in The Plant Phenome Journal (2025): Sarić, R., Čustović, E., Akagić, A., Trtílek, M., Lewsey, M. G., and Whelan, J. _Computer vision-based recognition and distinction of Arabidopsis thaliana ecotypes using supervised deep learning models_. [access](https://acsess.onlinelibrary.wiley.com/doi/10.1002/ppj2.70041)
+This work has been published in The Plant Phenome Journal (2025): Sarić, R., Čustović, E., Akagić, A., Trtílek, M., Lewsey, M. G., and Whelan, J. _Computer vision-based recognition and distinction of Arabidopsis thaliana ecotypes using supervised deep learning models_. [access](https://acsess.onlinelibrary.wiley.com/doi/10.1002/ppj2.70041)
 
 
 ## LICENSE
