@@ -22,6 +22,7 @@ A – Collection of RGB image data in an indoor HTPP environment, B – Preparat
 - [opencv-python](https://pypi.org/project/opencv-python/)
 - [jupyter notebook](https://jupyter.org/)
 - [Microsoft Visual Studio >=2022](https://visualstudio.microsoft.com/vs/)
+- [.NET Framework >= 4.8](https://dotnet.microsoft.com/en-us/download/dotnet-framework/net48)
 
 ## Structure
 The fundamental filesystem structure resembles the tree shown below. Essentially, we have two main folders: ```code``` for storing scripts and ```data``` for storing the dataset.
