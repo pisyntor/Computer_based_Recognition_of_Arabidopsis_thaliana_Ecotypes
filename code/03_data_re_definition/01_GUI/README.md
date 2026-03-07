@@ -1,6 +1,5 @@
 # PlantEnhancer GUI
 
-**Version 1.0**
 
 A graphical user interface for enhancing and segmenting plant images from RGB datasets of *Arabidopsis thaliana* ecotypes. PlantEnhancer separates plant regions from their background using colour deconvolution and background suppression, producing enhanced images and binary plant masks.
 
