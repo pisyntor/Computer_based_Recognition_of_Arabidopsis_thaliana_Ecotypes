@@ -1,4 +1,4 @@
-# 05 - Clustering Analysis of Leaf Morphological Traits
+# Clustering Analysis of Leaf Morphological Traits
 
 Clustering and similarity analysis of extracted leaf morphological traits across *Arabidopsis thaliana* accessions, organized into two datasets.
 
@@ -77,4 +77,5 @@ Performs hierarchical clustering within each accession (across replicates) and c
 - scipy (`linkage`, `dendrogram`)
 - matplotlib
 - openpyxl (for reading `.xlsx` files)
+
 
