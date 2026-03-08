@@ -1,4 +1,4 @@
-# 2D Morphological Traits
+# 2D Morpho Traits
 
 Extraction of 2D morphological traits from plant leaf masks using image processing and machine learning.
 
