@@ -1,4 +1,4 @@
-# Computer Vision-based recognition and distinction of _Arabidopsis thaliana_ ecotypes using supervised deep learning models
+# Computer vision-based recognition and distinction of _Arabidopsis thaliana_ ecotypes using supervised deep learning models
 
 This repository provides the full source code developed to classify various A. thaliana ecotypes using an RGB image analysis pipeline. This pipeline operates with a large volume of data collected by an X-Y indoor HTPP system.
 
